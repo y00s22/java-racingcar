@@ -32,11 +32,12 @@ public class RacingTest {
             positions[i] = Integer.parseInt(strNums[i]);
         }
 
+        int max = 0;
         for (int p : positions) {
-            racingGame.checkMaxPosition(p);
+            max = racingGame.checkMaxPosition(max, p);
         }
 
-        assertEquals(racingGame.getMaxPosition(), expected);
+        assertEquals(max, expected);
     }
 
     @DisplayName("우승자를 제대로 가져오는지 확인 - 파라미터와 동일한 경우 true 반환")
